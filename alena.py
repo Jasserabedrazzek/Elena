@@ -139,14 +139,14 @@ how_use_web = """
 """
 num = st.sidebar.text_input("Phone Number ")
 
-if st.sidebar.markdown("[Login](#login)") and  num and len(num)<= 8 and num != '12345678':
+if st.sidebar.markdown("[Login](#login)") and  num.isnumeric() and len(num)<= 8 and num != '12345678':
     make_file(num)
     tabs = ['Calculer Limits','Equation','# Graphique','# derivabilité', '# All', '# recents','# chat with DevTunisian']
     chose = st.tabs(tabs)
     with (chose[0]):
         st.write(f'# **{tabs[0]}**')
 
-        expression = st.text_input("Enter an expression (e.g., 'x**2 + 3*x - 1'):")
+        expression = st.text_input("Enter an expression (e.g., 'x**2 + 3*x - 1'):").lower()
         limit_value = st.number_input("Enter the limit value:")
         if expression and st.button("Limit"):
             try:
@@ -164,7 +164,7 @@ if st.sidebar.markdown("[Login](#login)") and  num and len(num)<= 8 and num != '
                 st.error(f"Error: {e}")
     with (chose[1]):
         st.write(f'# **{tabs[1]}**')
-        equation = st.text_input("Enter an equation (e.g., 'x**2 + 1 = 0'):")
+        equation = st.text_input("Enter an equation (e.g., 'x**2 + 1 = 0'):").lower()
     
         if equation and st.button("solution"):
         # Separate the equation into LHS and RHS
@@ -201,9 +201,9 @@ if st.sidebar.markdown("[Login](#login)") and  num and len(num)<= 8 and num != '
                 st.error("Invalid equation format. Please use 'LHS = RHS' format.")
     with (chose[2]):
         st.write(tabs[2])
-        expression = st.text_input("Enter an expression `(e.g., 'x**2 + 3*x - 1' or exp(x) or cos(x) etc)` for the graph:")
-        x_interval = st.text_input("Enter the x interval as a tuple (e.g., (-10, 10)):")
-        y_interval = st.text_input("Enter the y interval as a tuple (e.g., (-20, 20)):")
+        expression = st.text_input("Enter an expression `(e.g., 'x**2 + 3*x - 1' or exp(x) or cos(x) etc)` for the graph:").lower()
+        x_interval = st.text_input("Enter the x interval as a tuple (e.g., (-10, 10)):").lower()
+        y_interval = st.text_input("Enter the y interval as a tuple (e.g., (-20, 20)):").lower()
 
         if expression and x_interval and y_interval  and st.button("Show"):
             try:
@@ -231,7 +231,7 @@ if st.sidebar.markdown("[Login](#login)") and  num and len(num)<= 8 and num != '
                 st.error(f"Error: {e}") 
     with (chose[3]):
             st.write(tabs[3])
-            expression = st.text_input("Enter an expression (e.g., 'sin(x) - 2*cos(2*x)') to calculate its derivative:")
+            expression = st.text_input("Enter an expression (e.g., 'sin(x) - 2*cos(2*x)') to calculate its derivative:").lower()
 
             if expression  and st.button("Derivé"):
                 try:
@@ -256,7 +256,7 @@ if st.sidebar.markdown("[Login](#login)") and  num and len(num)<= 8 and num != '
         st.write(tabs[4])
     
     # Input fields for equation, limit, and graph
-        equation = st.text_input("Enter an equation (e.g., 'x**2 + 3*x - 1'):")
+        equation = st.text_input("Enter an equation (e.g., 'x**2 + 3*x - 1'):").lower()
         limit_value = st.number_input("Enter the limit value (optional):")
         x_interval = ("-10,10")
         y_interval = ("-100,100")
