@@ -13,6 +13,7 @@ st.set_page_config(page_title='Elena - DevTunisian',
                    )
 hide = """<style>
 #MainMenu {visibility: hidden;}
+header {visibility: hidden;}
 """
 
 st.markdown(hide, unsafe_allow_html=True)
@@ -137,9 +138,9 @@ how_use_web = """
 -
 - for use racine Carré in equation write **('sqrt(x)')** .
 """
-num = st.sidebar.text_input("Phone Number ")
+num = "22402463"
 
-if st.sidebar.markdown("[Login](#login)") and  num.isnumeric() and len(num)<= 8 and num != '12345678':
+if   num.isnumeric() and len(num)<= 8 and num != '12345678':
     make_file(num)
     tabs = ['Calculer Limits','Equation','# Graphique','# derivabilité', '# All', '# recents','# chat with DevTunisian']
     chose = st.tabs(tabs)
