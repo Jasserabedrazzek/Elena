@@ -361,7 +361,7 @@ if num == "27692361":
     pass
 
 else:
-
+    st.sidebar.markdown('Powered by [DevTunisian](https://devtunisian.netlify.app/)')
     st.sidebar.write("---")
     st.sidebar.write(how_use_web)
-st.markdown('Powered by [DevTunisian](https://devtunisian.netlify.app/)')
+
