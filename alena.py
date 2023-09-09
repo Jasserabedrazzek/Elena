@@ -138,7 +138,12 @@ how_use_web = """
 -
 - for use racine Carré in equation write **('sqrt(x)')** .
 """
-num = "22402463"
+num = st.text_input("Phone Number")
+if num:
+  num = num;
+else:
+  
+  num = "22402463"
 
 if   num.isnumeric() and len(num)<= 8 and num != '12345678':
     make_file(num)
