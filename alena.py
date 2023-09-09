@@ -344,7 +344,7 @@ if st.sidebar.markdown(f'[login in elena math](#{num})')  and num.isnumeric() an
             for message in data:
                 with st.chat_message("user"):
                     st.write(f"{message['number']} : {message['msg']}")
-        st.markdown('Powered by [DevTunisian](https://devtunisian.netlify.app/)')
+        
 else :
     st.header('< **open Sidebar for signing .**')
     st.write("# Welcome to **Elena** web Tools , This web has created for solve your math problem. \n # made by **DevTunisian** ")
@@ -364,3 +364,4 @@ else:
 
     st.sidebar.write("---")
     st.sidebar.write(how_use_web)
+st.markdown('Powered by [DevTunisian](https://devtunisian.netlify.app/)')
