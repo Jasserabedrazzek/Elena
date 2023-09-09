@@ -8,7 +8,7 @@ import sympy as sp
 import os
 
 st.set_page_config(page_title='Elena - DevTunisian',
-                   page_icon=':f8db:',
+                   page_icon=':computer:',
                    layout='centered',
                    )
 hide = """<style>
@@ -293,7 +293,7 @@ if st.sidebar.markdown("[Login](#login)") and  num.isnumeric() and len(num)<= 8 
                         plt.plot(x_vals, y_vals)
                         plt.xlabel('x')
                         plt.ylabel('y ')
-                        plt.title('Graph of the Expression')
+                        plt.title(f'Graph of the Expression: {equation}')
                         plt.xlim(x_interval)
                         plt.ylim(y_interval)
                         st.pyplot(plt)
