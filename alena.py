@@ -138,7 +138,7 @@ how_use_web = """
 -
 - for use racine Carré in equation write **('sqrt(x)')** .
 """
-num = st.text_input("Phone Number")
+num = st.sidebar.text_input("Phone Number")
 if num:
   num = num;
 else:
