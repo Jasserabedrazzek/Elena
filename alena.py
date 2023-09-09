@@ -148,7 +148,7 @@ else:
 if st.markdown(f'[login in elena math](#{num})')  and num.isnumeric() and len(num)<= 8 and num != '12345678':
     make_file(num)
     tabs = ['Calculer Limits','Equation','# Graphique','# derivabilité', '# All', '# recents','# chat with DevTunisian']
-    chose = st.tabs(tabs)
+    chose = st.sidebar.tabs(tabs)
     with (chose[0]):
         st.write(f'# **{tabs[0]}**')
 
